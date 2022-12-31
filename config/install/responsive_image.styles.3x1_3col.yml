@@ -1,0 +1,82 @@
+uuid: 9a777abf-58fd-42f6-afb6-5ed73ca28c44
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.2x3_md_4col_2x
+    - image.style.3x1_lg_3col
+    - image.style.3x1_lg_3col_2x
+    - image.style.3x1_md_4col
+    - image.style.3x1_sm_6col
+    - image.style.3x1_sm_6col_2x
+    - image.style.3x1_xl_3col
+    - image.style.3x1_xl_3col_2x
+    - image.style.3x1_xxl_3col
+    - image.style.3x1_xxl_3col_2x
+  theme:
+    - puffin
+id: 3x1_3col
+label: 3x1_3col
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: 3x1_xxl_3col
+    breakpoint_id: puffin.xxl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 3x1_xxl_3col_2x
+    breakpoint_id: puffin.xxl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 3x1_xl_3col
+    breakpoint_id: puffin.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 3x1_xl_3col_2x
+    breakpoint_id: puffin.xl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 3x1_lg_3col
+    breakpoint_id: puffin.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 3x1_lg_3col_2x
+    breakpoint_id: puffin.lg
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 3x1_md_4col
+    breakpoint_id: puffin.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 2x3_md_4col_2x
+    breakpoint_id: puffin.md
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 3x1_sm_6col
+    breakpoint_id: puffin.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 3x1_sm_6col_2x
+    breakpoint_id: puffin.sm
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 3x1_sm_6col
+    breakpoint_id: puffin.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 3x1_sm_6col_2x
+    breakpoint_id: puffin.xs
+    multiplier: 2x
+breakpoint_group: puffin
+fallback_image_style: '_empty image_'

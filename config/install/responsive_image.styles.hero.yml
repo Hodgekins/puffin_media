@@ -1,0 +1,136 @@
+uuid: 38f7e947-fc6b-4a51-834e-00a67d3ca379
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.3x1_100vw_1366px
+    - image.style.3x1_100vw_1366px_2x
+    - image.style.3x1_100vw_1920px
+    - image.style.3x1_100vw_1920px_2x
+    - image.style.5x4_100vw_375px
+    - image.style.5x4_100vw_375px_2x
+    - image.style.5x4_100vw_414px
+    - image.style.5x4_100vw_414px_2x
+    - image.style.5x4_100vw_768px
+    - image.style.5x4_100vw_768px_2x
+  theme:
+    - puffin
+id: hero
+label: Hero
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 3x1_100vw_1366px
+        - 3x1_100vw_1920px
+    breakpoint_id: puffin.xxl
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 3x1_100vw_1366px_2x
+        - 3x1_100vw_1920px_2x
+    breakpoint_id: puffin.xxl
+    multiplier: 2x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 3x1_100vw_1366px
+        - 3x1_100vw_1920px
+    breakpoint_id: puffin.xl
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 3x1_100vw_1366px_2x
+        - 3x1_100vw_1920px_2x
+    breakpoint_id: puffin.xl
+    multiplier: 2x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 3x1_100vw_1366px
+        - 3x1_100vw_1920px
+    breakpoint_id: puffin.lg
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 3x1_100vw_1366px_2x
+        - 3x1_100vw_1920px_2x
+    breakpoint_id: puffin.lg
+    multiplier: 2x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 5x4_100vw_375px
+        - 5x4_100vw_414px
+        - 5x4_100vw_768px
+    breakpoint_id: puffin.md
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 5x4_100vw_375px_2x
+        - 5x4_100vw_414px_2x
+        - 5x4_100vw_768px_2x
+    breakpoint_id: puffin.md
+    multiplier: 2x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 5x4_100vw_375px
+        - 5x4_100vw_414px
+        - 5x4_100vw_768px
+    breakpoint_id: puffin.sm
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 5x4_100vw_375px_2x
+        - 5x4_100vw_414px_2x
+        - 5x4_100vw_768px_2x
+    breakpoint_id: puffin.sm
+    multiplier: 2x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 5x4_100vw_375px
+        - 5x4_100vw_414px
+        - 5x4_100vw_768px
+    breakpoint_id: puffin.xs
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 5x4_100vw_375px_2x
+        - 5x4_100vw_414px_2x
+        - 5x4_100vw_768px_2x
+    breakpoint_id: puffin.xs
+    multiplier: 2x
+breakpoint_group: puffin
+fallback_image_style: '_empty image_'

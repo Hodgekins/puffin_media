@@ -1,0 +1,7 @@
+name: Puffin Media
+type: module
+description: Sets up image styles
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - crop

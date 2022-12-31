@@ -1,0 +1,82 @@
+uuid: e7410247-83eb-44d1-ab35-f805ff2201ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.16x9_lg_8col
+    - image.style.16x9_lg_8col_2x
+    - image.style.16x9_md_8col
+    - image.style.16x9_md_8col_2x
+    - image.style.16x9_sm_12col
+    - image.style.16x9_sm_12col_2x
+    - image.style.16x9_xl_8col
+    - image.style.16x9_xl_8col_2x
+    - image.style.16x9_xxl_8col
+    - image.style.16x9_xxl_8col_2x
+  theme:
+    - puffin
+id: 16x9_8col
+label: 16x9_8col
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_xxl_8col
+    breakpoint_id: puffin.xxl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_xxl_8col_2x
+    breakpoint_id: puffin.xxl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_xl_8col
+    breakpoint_id: puffin.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_xl_8col_2x
+    breakpoint_id: puffin.xl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_lg_8col
+    breakpoint_id: puffin.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_lg_8col_2x
+    breakpoint_id: puffin.lg
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_md_8col
+    breakpoint_id: puffin.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_md_8col_2x
+    breakpoint_id: puffin.md
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_sm_12col
+    breakpoint_id: puffin.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_sm_12col_2x
+    breakpoint_id: puffin.sm
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_sm_12col
+    breakpoint_id: puffin.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 16x9_sm_12col_2x
+    breakpoint_id: puffin.xs
+    multiplier: 2x
+breakpoint_group: puffin
+fallback_image_style: '_empty image_'

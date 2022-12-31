@@ -1,0 +1,32 @@
+uuid: 26f4f25a-f407-438a-ae60-ff05ffcd4a1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.5x4
+  module:
+    - crop
+name: 5x4_md_4col_2x
+label: 5x4_md_4col_2x
+effects:
+  13c9f61f-307b-4baa-8d3f-1b69410b4cd9:
+    uuid: 13c9f61f-307b-4baa-8d3f-1b69410b4cd9
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: 5x4
+      automatic_crop_provider: null
+  d29016ac-cad3-4143-905c-a700c9647ddb:
+    uuid: d29016ac-cad3-4143-905c-a700c9647ddb
+    id: image_scale
+    weight: 2
+    data:
+      width: 432
+      height: 344
+      upscale: true
+  f110df83-dbe0-4993-9d8d-359fbac0658b:
+    uuid: f110df83-dbe0-4993-9d8d-359fbac0658b
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

@@ -1,0 +1,32 @@
+uuid: 78293ae5-d1cb-46cb-b4a0-2eb2ff4a8737
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.2x3
+  module:
+    - crop
+name: 2x3_4col_xl_2x
+label: 2x3_4col_xl_2x
+effects:
+  862f840a-829c-43b3-932d-1fa8eae289b2:
+    uuid: 862f840a-829c-43b3-932d-1fa8eae289b2
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: 2x3
+      automatic_crop_provider: null
+  e0061a58-9aa9-4795-8412-20e67214a21c:
+    uuid: e0061a58-9aa9-4795-8412-20e67214a21c
+    id: image_scale
+    weight: 2
+    data:
+      width: 760
+      height: 1140
+      upscale: true
+  8f977bfa-0c39-477c-b0e5-689be261e83e:
+    uuid: 8f977bfa-0c39-477c-b0e5-689be261e83e
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp
