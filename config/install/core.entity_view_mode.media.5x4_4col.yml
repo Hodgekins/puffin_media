@@ -1,0 +1,10 @@
+uuid: ed277cf1-fa63-459c-9a73-5e7285707d19
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.5x4_4col
+label: 5x4_4col
+targetEntityType: media
+cache: true

@@ -1,0 +1,30 @@
+uuid: ee8cc6da-32c9-462f-9145-9390ecf2629a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.16x9_8col
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.16x9_8col
+  module:
+    - responsive_image
+id: media.image.16x9_8col
+targetEntityType: media
+bundle: image
+mode: 16x9_8col
+content:
+  field_media_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: 16x9_8col
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

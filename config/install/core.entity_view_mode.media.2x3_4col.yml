@@ -1,0 +1,10 @@
+uuid: cda07008-6084-42af-adf3-7ffbf7bf3974
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.2x3_4col
+label: 2x3_4col
+targetEntityType: media
+cache: true

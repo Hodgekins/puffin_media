@@ -1,0 +1,9 @@
+lite-yt:
+  version: 1.x
+  js:
+    node_modules/lite-youtube-embed/src/lite-yt-embed.js: {}
+  css:
+    theme:
+      node_modules/lite-youtube-embed/src/lite-yt-embed.css: {}
+
+

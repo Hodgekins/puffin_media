@@ -1,0 +1,30 @@
+uuid: c8ec782e-5be7-4ea0-a47c-3a55141e0238
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.5x4_4col
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.5x4_4col
+  module:
+    - responsive_image
+id: media.image.5x4_4col
+targetEntityType: media
+bundle: image
+mode: 5x4_4col
+content:
+  field_media_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: 5x4_4col
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true
