@@ -8,3 +8,4 @@ dependencies:
   - image_widget_crop
   - media
   - media_library
+  - responsive_image
