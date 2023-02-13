@@ -10,15 +10,15 @@
  */
 function puffin_media_preprocess_image(&$variables) {
 
-  //Add Bootstrap classes to images
-  $variables['attributes']['class'][] = 'w-100';
-  $variables['attributes']['class'][] = 'h-auto';
-
-  //Add lazy loading to all images
-  $variables['attributes']['loading'] = 'lazy';
-
   //Add width & height attributes (depends on style_name core patch (07/22))
   if (isset($variables['responsive_image_style_id'])) {
+
+    //Add Bootstrap classes to images
+    $variables['attributes']['class'][] = 'w-100';
+    $variables['attributes']['class'][] = 'h-auto';
+
+    //Add lazy loading to all images
+    $variables['attributes']['loading'] = 'lazy';    
 
     if (strpos($variables['responsive_image_style_id'],'5x4') !== FALSE) {
       $variables['attributes']['width'] = '500';
