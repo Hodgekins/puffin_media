@@ -1,0 +1,403 @@
+<?php
+
+/**
+ * This script will generate all crop type, image styles and responsive images
+ */
+use Drupal\image\Entity\ImageStyle;
+use Drupal\responsive_image\Entity\ResponsiveImageStyle;
+use Drupal\crop\Entity\CropType;
+
+/**
+ * Generate crop types
+ */
+$cropTypes = [
+  '2x3' => '2:3',
+  '3x1' => '3:1',
+  '5x4' => '5:4',
+  '16x9' => '16:9',
+];
+
+foreach($cropTypes as $id => $ratio) {
+
+  if (!$crop = CropType::load($id)) {
+    $crop = CropType::create();
+  }
+
+  $crop->set('id', $id)
+    ->set('label', $id)
+    ->set('aspect_ratio', $ratio)
+    ->set('description', '')
+    ->set('soft_limit_width', null)
+    ->set('soft_limit_height', null)
+    ->set('hard_limit_width', null)
+    ->set('hard_limit_height', null)
+    ->save();
+}
+
+/**
+ * Generate image styles for responsive image styles
+ */
+// 2x3_4col
+$image_styles = [
+  '2x3_12col_sm' => 516,
+  '2x3_4col_md' => 216,
+  '2x3_4col_lg' => 296,
+  '2x3_4col_xl' => 356,
+  '2x3_4col_xxl' => 416,
+];
+_createImageStyleSet('2x3', $image_styles);
+
+// 3x1_3col
+$image_styles = [
+  '3x1_6col_sm' => 246,
+  '3x1_6col_md' => 336,
+  '3x1_3col_lg' => 216,
+  '3x1_3col_xl' => 261,
+  '3x1_3col_xxl' => 306,
+];
+_createImageStyleSet('3x1', $image_styles);
+
+// 5x4_4col
+$image_styles = [
+  '5x4_12col_sm' => 516,
+  '5x4_4col_md' => 216,
+  '5x4_4col_lg' => 296,
+  '5x4_4col_xl' => 356,
+  '5x4_4col_xxl' => 416,
+];
+_createImageStyleSet('5x4', $image_styles);
+
+// 5x4_6col
+$image_styles = [
+  '2x3_12col_sm' => 516,
+  '2x3_4col_md' => 336,
+  '2x3_4col_lg' => 456,
+  '2x3_4col_xl' => 546,
+  '2x3_4col_xxl' => 636,
+];
+_createImageStyleSet('5x4', $image_styles);
+
+// 16x9_8col
+$image_styles = [
+  '16x9_12col_sm' => 516,
+  '16x9_8col_md' => 456,
+  '16x9_8col_lg' => 616,
+  '16x9_8col_xl' => 736,
+  '16x9_8col_xxl' => 856,
+];
+_createImageStyleSet('16x9', $image_styles);
+
+// hero_100vw
+$image_styles = [
+  '5x4_100vw_sm' => 576,
+  '5x4_100vw_md' => 768,
+];
+_createImageStyleSet('5x4', $image_styles);
+$image_styles = [
+  '3x1_100vw_lg' => 992,
+  '3x1_100vw_xl' => 1200,
+  '3x1_100vw_xxl' => 1400,
+];
+_createImageStyleSet('3x1', $image_styles);
+
+/**
+ * Generate responsive images
+ */
+// 2x3_4col
+$responsive_image_styles = [
+  'xs' => '2x3_12col_sm',
+  'xs_2x' => '2x3_12col_sm_2x',
+  'sm' => '2x3_12col_sm',
+  'sm_2x' => '2x3_12col_sm_2x',
+  'md' => '2x3_4col_md',
+  'md_2x' => '2x3_4col_md_2x',
+  'lg' => '2x3_4col_lg',
+  'lg_2x' => '2x3_4col_lg_2x',
+  'xl' => '2x3_4col_xl',
+  'xl_2x' => '2x3_4col_xl_2x',
+  'xxl' => '2x3_4col_xxl',
+  'xxl_2x' => '2x3_4col_xxl_2x',
+];
+$image_style_mappings = _generateImageStyleMappings($responsive_image_styles);
+_createResponsiveImageStyle('2x3_4col', $image_style_mappings);
+
+// 3x1_3col
+$responsive_image_styles = [
+  'xs' => '3x1_6col_sm',
+  'xs_2x' => '3x1_6col_sm_2x',
+  'sm' => '3x1_6col_sm',
+  'sm_2x' => '3x1_6col_sm_2x',
+  'md' => '3x1_6col_md',
+  'md_2x' => '3x1_6col_md_2x',
+  'lg' => '3x1_3col_lg',
+  'lg_2x' => '3x1_3col_lg_2x',
+  'xl' => '3x1_3col_xl',
+  'xl_2x' => '3x1_3col_xl_2x',
+  'xxl' => '3x1_3col_xxl',
+  'xxl_2x' => '3x1_3col_xxl_2x',
+];
+$image_style_mappings = _generateImageStyleMappings($responsive_image_styles);
+_createResponsiveImageStyle('3x1_3col', $image_style_mappings);
+
+// 5x4_4col
+$responsive_image_styles = [
+  'xs' => '5x4_12col_sm',
+  'xs_2x' => '5x4_12col_sm_2x',
+  'sm' => '5x4_12col_sm',
+  'sm_2x' => '5x4_12col_sm_2x',
+  'md' => '5x4_4col_md',
+  'md_2x' => '5x4_4col_md_2x',
+  'lg' => '5x4_4col_lg',
+  'lg_2x' => '5x4_4col_lg_2x',
+  'xl' => '5x4_4col_xl',
+  'xl_2x' => '5x4_4col_xl_2x',
+  'xxl' => '5x4_4col_xxl',
+  'xxl_2x' => '5x4_4col_xxl_2x',
+];
+$image_style_mappings = _generateImageStyleMappings($responsive_image_styles);
+_createResponsiveImageStyle('5x4_4col', $image_style_mappings);
+
+// 5x4_6col
+$responsive_image_styles = [
+  'xs' => '5x4_12col_sm',
+  'xs_2x' => '5x4_12col_sm_2x',
+  'sm' => '5x4_12col_sm',
+  'sm_2x' => '5x4_12col_sm_2x',
+  'md' => '5x4_6col_md',
+  'md_2x' => '5x4_6col_md_2x',
+  'lg' => '5x4_6col_lg',
+  'lg_2x' => '5x4_6col_lg_2x',
+  'xl' => '5x4_6col_xl',
+  'xl_2x' => '5x4_6col_xl_2x',
+  'xxl' => '5x4_6col_xxl',
+  'xxl_2x' => '5x4_6col_xxl_2x',
+];
+$image_style_mappings = _generateImageStyleMappings($responsive_image_styles);
+_createResponsiveImageStyle('5x4_6col', $image_style_mappings);
+
+// 16x9_8col
+$responsive_image_styles = [
+  'xs' => '16x9_12col_sm',
+  'xs_2x' => '16x9_12col_sm_2x',
+  'sm' => '16x9_12col_sm',
+  'sm_2x' => '16x9_12col_sm_2x',
+  'md' => '16x9_8col_md',
+  'md_2x' => '16x9_8col_md_2x',
+  'lg' => '16x9_8col_lg',
+  'lg_2x' => '16x9_8col_lg_2x',
+  'xl' => '16x9_8col_xl',
+  'xl_2x' => '16x9_8col_xl_2x',
+  'xxl' => '16x9_8col_xxl',
+  'xxl_2x' => '16x9_8col_xxl_2x',
+];
+$image_style_mappings = _generateImageStyleMappings($responsive_image_styles);
+_createResponsiveImageStyle('16x9_8col', $image_style_mappings);
+
+// hero_100vw
+$responsive_image_styles = [
+  'xs' => '5x4_100vw_sm',
+  'xs_2x' => '5x4_100vw_sm_2x',
+  'sm' => '5x4_100vw_sm',
+  'sm_2x' => '5x4_100vw_sm_2x',
+  'md' => '5x4_100vw_md',
+  'md_2x' => '5x4_100vw_md_2x',
+  'lg' => '3x1_100vw_lg',
+  'lg_2x' => '3x1_100vw_lg_2x',
+  'xl' => '3x1_100vw_xl',
+  'xl_2x' => '3x1_100vw_xl_2x',
+  'xxl' => '3x1_100vw_xxl',
+  'xxl_2x' => '3x1_100vw_xxl_2x',
+];
+$image_style_mappings = _generateImageStyleMappings($responsive_image_styles);
+_createResponsiveImageStyle('hero', $image_style_mappings);
+
+
+/**
+* Generates 12 image styles.
+* $sizes key is the image style id, value is the width of the image
+*/
+function _createImageStyleSet (string $ratio, array $sizes) {
+
+  preg_match_all('/\d+/', $ratio, $results);
+  $x = $results[0][0];
+  $y = $results[0][1];
+
+  foreach($sizes as $breakpoint => $size) {
+
+    //Just ignore if the style already exists (otherwise we double all effects)
+    if (!$image_style = ImageStyle::load($breakpoint)) {
+
+      $image_style = ImageStyle::create([
+        'name' => $breakpoint,
+        'label' => $breakpoint,
+      ]);
+
+      $image_style->addImageEffect([
+        'id' => 'crop_crop',
+        'weight' => 0,
+        'data' => [
+          'crop_type' => $ratio,
+          'automatic_crop_provider' => NULL,
+        ],
+      ]);
+      $image_style->addImageEffect([
+        'id' => 'image_scale',
+        'weight' => 1,
+        'data' => [
+          'width' => $size,
+          'height' => round($size / ($x / $y)),
+          'upscale' => TRUE,
+        ],
+      ]);
+      $image_style->addImageEffect([
+        'id' => 'image_convert',
+        'weight' => 2,
+        'data' => [
+          'extension' => 'webp',
+        ],
+      ]);
+
+      $image_style->save();
+    };
+
+
+    //Retina
+    if (!$image_style = ImageStyle::load($breakpoint . '_2x')) {
+
+      $image_style = ImageStyle::create([
+        'name' => $breakpoint . '_2x',
+      ]);
+
+      $image_style->set('label', $breakpoint . '_2x');
+
+      $image_style->addImageEffect([
+        'id' => 'crop_crop',
+        'weight' => 0,
+        'data' => [
+          'crop_type' => $ratio,
+          'automatic_crop_provider' => NULL,
+        ],
+      ]);
+      $image_style->addImageEffect([
+        'id' => 'image_scale',
+        'weight' => 1,
+        'data' => [
+          'width' => $size * 2,
+          'height' => round($size / ($x / $y)) * 2,
+          'upscale' => TRUE,
+        ],
+      ]);
+      $image_style->addImageEffect([
+        'id' => 'image_convert',
+        'weight' => 2,
+        'data' => [
+          'extension' => 'webp',
+        ],
+      ]);
+      $image_style->save();
+    }
+  }
+}
+
+/**
+* Returns an array that can be used to generate a resposive image style
+*/
+function _generateImageStyleMappings(array $mappings) {
+
+  return [
+    [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.xs',
+      'image_mapping' => $mappings['xs'],
+      'multiplier' => '1x',
+    ],
+    [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.xs',
+      'image_mapping' => $mappings['xs_2x'],
+      'multiplier' => '2x',
+    ],          [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.sm',
+      'image_mapping' => $mappings['sm'],
+      'multiplier' => '1x',
+    ],
+    [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.sm',
+      'image_mapping' => $mappings['sm_2x'],
+      'multiplier' => '2x',
+    ],          [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.md',
+      'image_mapping' => $mappings['md'],
+      'multiplier' => '1x',
+    ],
+    [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.md',
+      'image_mapping' => $mappings['md_2x'],
+      'multiplier' => '2x',
+    ],          [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.lg',
+      'image_mapping' => $mappings['lg'],
+      'multiplier' => '1x',
+    ],
+    [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.lg',
+      'image_mapping' => $mappings['lg_2x'],
+      'multiplier' => '2x',
+    ],          [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.xl',
+      'image_mapping' => $mappings['xl'],
+      'multiplier' => '1x',
+    ],
+    [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.xl',
+      'image_mapping' => $mappings['xl_2x'],
+      'multiplier' => '2x',
+    ],          [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.xxl',
+      'image_mapping' => $mappings['xxl'],
+      'multiplier' => '1x',
+    ],
+    [
+      'image_mapping_type' => 'image_style',
+      'breakpoint_id' => 'puffin.xxl',
+      'image_mapping' => $mappings['xxl_2x'],
+      'multiplier' => '2x',
+    ],
+  ];
+}
+
+function _createResponsiveImageStyle(string $id, array $mappings) {
+
+  if (!$responsive_image_style = ResponsiveImageStyle::load($id)) {
+    $responsive_image_style = ResponsiveImageStyle::create([
+      'id' => $id,
+    ]);
+  }
+
+  $responsive_image_style->set('label', $id)
+    ->set('breakpoint_group', 'puffin');
+
+  foreach($mappings as $mapping) {
+    $responsive_image_style->addImageStyleMapping(
+      $mapping['breakpoint_id'],
+      $mapping['multiplier'],
+      [
+        'image_mapping_type' => $mapping['image_mapping_type'],
+        'image_mapping' => $mapping['image_mapping'],
+      ]
+    );
+  }
+
+  $responsive_image_style->setFallbackImageStyle(ResponsiveImageStyle::EMPTY_IMAGE);
+
+  $responsive_image_style->save();
+}
