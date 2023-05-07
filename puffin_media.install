@@ -69,11 +69,11 @@ _createImageStyleSet('5x4', $image_styles);
 
 // 5x4_6col
 $image_styles = [
-  '2x3_12col_sm' => 516,
-  '2x3_4col_md' => 336,
-  '2x3_4col_lg' => 456,
-  '2x3_4col_xl' => 546,
-  '2x3_4col_xxl' => 636,
+  '5x4_12col_sm' => 516,
+  '5x4_6col_md' => 336,
+  '5x4_6col_lg' => 456,
+  '5x4_6col_xl' => 546,
+  '5x4_6col_xxl' => 636,
 ];
 _createImageStyleSet('5x4', $image_styles);
 
