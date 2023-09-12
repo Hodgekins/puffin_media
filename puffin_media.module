@@ -24,9 +24,6 @@ function puffin_media_preprocess_image(&$variables) {
     $variables['attributes']['class'][] = 'w-100';
     $variables['attributes']['class'][] = 'h-auto';
 
-    //Add lazy loading to all images
-    $variables['attributes']['loading'] = 'lazy';    
-
     if (strpos($variables['responsive_image_style_id'],'5x4') !== FALSE) {
       $variables['attributes']['width'] = '500';
       $variables['attributes']['height'] = '400';
@@ -47,7 +44,6 @@ function puffin_media_preprocess_image(&$variables) {
       $variables['attributes']['width'] = '500';
       $variables['attributes']['height'] = '400';
       $variables['attributes']['class'][] = 'heroImage';
-      unset($variables['attributes']['loading']);
     }
   }
 }
